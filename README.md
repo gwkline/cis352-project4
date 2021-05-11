@@ -1,9 +1,12 @@
 
-## **Asynchronous Functions In JavaScript**
+
+# **Asynchronous Functions In JavaScript**
 
 JavaScript Is a programming language commonly used In web development, and Is the basis for many websites and online tools. While JS was originally only meant for use In browser-based environments, there are now frameworks that allow the language to be used standalone, such as Node.JS, for example. One of the unique aspects of JS programming Is the ability to make functions asynchronous. 
 
 In programming languages like Python, code Is executed In a linear fashion, following the exact flow a program was written with. JS, on the other hand, uses asynchronous functions to execute certain blocks of code while the rest of the program Is still running. This Is done by utilizing another feature of JS, known as promises. A promise Is an object that, upon being called, will return a placeholder value until a real value can be produced. If this object successfully produces a value, that means the promise has been "resolved", and the object's value will be updated. If there Is some sort of error In the process of producing a value, the promise will be "rejected", and (depending on how the program handles errors) can return debugging Information. With this Idea of promises established, you may begin to see how this relates to asynchronous functions. 
+
+## **Real World Applications**
 
 Let's take a look at some JS code (written In the Node.JS framework):
 ```
@@ -74,6 +77,8 @@ asyncronous function {
 
 This Is just one example of the use cases of asynchronous functions. This shows both the benefits of using them (efficiency of tasks we want to run "In the background") and also some of the Inconveniences/difficulties of Implementing asynchronous functions that work smoothly (e.g. promise handling and proper error handling). While not every use case warrants an asynchronous function, JS gives you the option of using them to make your code run efficiently In the way you design.
 
+## Async in Relation to Multi-Threading
+
 This example of using asynchronous functions in a web-scraping scenario was actually my first time using Node.JS or JS in general. I was hired to create a monitor in Node.JS for a specific website, and was struggling to transition my code from what I had done in Python. My issue was handling hundreds of HTTP requests in a matter of seconds, and optimizing that to be as fast and efficient as possible. While researching possible alternatives to synchronous functions, I came across the idea of multi-threading and simultaneous multi-threading (SMT). 
 
 When you run a basic program or script, it is executed on what is called a thread. A thread is one process of instructions being performed by your code. This works great for basic programs, but when you need to be doing many operations in a short period of time, things can get slow. Multi-threading is one solution to this, allowing multiple processes of some instruction to be executed at the same time. C and C++ are two examples of languages that are designed to handle multi-threading. There are a few types of multi-threading that can be used in programming and development, and their use cases depend on the machines running them.
@@ -85,4 +90,15 @@ Now, back to the idea of multi-threading. One type of multi-threading involves t
 Asynchronous functions in JS can be thought of as a type of SMT. When there is a gap in the instructions being run, and nothing is being executed, JS will fill those empty spaces with asynchronous function instructions. You might be wondering, why not utilize the extra cores of the CPU rather than using SMT and asynchronous functions? In this specific use case, I would not see much of a performance boost by using hardware-based multi-threading. Hardware-based multi-threading will give the best results in cases of heavy CPU workloads (e.g. doing computations), know as CPU bound tasks. HTTP requests are not CPU bound tasks, as they rely on an outside factor (in this case, the speed of the connection to the source we are trying to retrieve data from). This is considered an I/O (input/output) task. 
 
 JS is a high-level and easy to understand language if you are familiar with languages like Python or Java.  The high rate of use in web development, and growing number of standalone frameworks means that JS is more relevant than ever. Being able to understand and properly use asynchronous functions in your code is an easy way to bring your programming to the next level, by producing cleaner, more efficient programs and scripts that scale well for many use cases.
+
+## References:
+
+Asynchronous Function Documentation:
+https://javascript.info/async-await
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+
+Multi-threading information:
+https://www.internalpointers.com/post/gentle-introduction-multithreading
+https://superuser.com/questions/740611/what-is-the-difference-between-multithreading-and-hyperthreading
+
 
